@@ -58,15 +58,15 @@ router.get('/me', authenticated, async (req, res) => {
   })
 });
 
-router.get('/logout', async (req, res) => {
+router.get("/logout", authenticated, async (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res.status(400).json({
-        message: err.message
-      })
+        message: err.message,
+      });
     }
-    res.redirect('/login');
-  })
+    res.redirect("/login");
+  });
 });
 
 
