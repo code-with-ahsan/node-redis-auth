@@ -9,6 +9,8 @@ const { createClient } = require('redis');
 const connectRedis = require('connect-redis');
 const redisClient = createClient({
   url: process.env.REDIS_URL,
+  username: process.env.REDIS_USERNAME,
+  password: process.env.REDIS_PASSWORD,
   legacyMode: true,
 });
 
