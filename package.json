@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "dbSeed": "node ./dbSeed.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
