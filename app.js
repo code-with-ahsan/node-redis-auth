@@ -7,7 +7,10 @@ require('dotenv').config();
 require('./dbConnect')();
 const { createClient } = require('redis');
 const connectRedis = require('connect-redis');
-const redisClient = createClient({legacyMode: true});
+const redisClient = createClient({
+  url: process.env.REDIS_URL,
+  legacyMode: true,
+});
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
